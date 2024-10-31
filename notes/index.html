@@ -1,0 +1,493 @@
+<!-- 
+	Copyright 2024 by PanDaoxi.
+	All right reserved.
+	
+	( Templates: tag.ejs )
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<!-- 
+	Copyright 2024 by PanDaoxi.
+	All right reserved.
+	
+	( Includes: head.ejs )
+-->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+<!-- 标题和图标 -->
+<title>笔记 | PanDaoxi</title>
+<link rel="shortcut icon" href="https://daoxi365.github.io//favicon.ico">
+<link href="https://daoxi365.github.io//styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/font_1678829_7cn41ho9lyt.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="PanDaoxi » Feed" href="https://daoxi365.github.io//atom.xml">
+
+<!-- 引入 jQuery -->
+<!-- 
+难以访问，弃用：
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+-->
+<link rel="stylesheet" href="/jquery-3.7.1.min.js">
+<!-- 引入 Font-Awesome -->
+<!-- 
+一个足矣，弃用：
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+-->
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+<!-- 引入 animate.css 实现动画效果 -->
+<!-- 
+本地版更易维护，弃用：
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+-->
+<link rel="stylesheet" href="/animate.css">
+
+<!-- 引入 KaTeX 实现 LaTeX 的支持（数学公式） -->
+<!-- 
+难以访问（墙），弃用：
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
+
+字体不美观，弃用：
+
+<link href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.2/katex.min.css" rel="stylesheet" />
+<script src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.2/katex.min.js"></script>
+-->
+<link rel="stylesheet" href="/katex/katex.min.css">
+<script src="/katex/katex.min.js"></script>
+
+<!-- 代码高亮模板、引入 HighlightJS -->
+<link rel="stylesheet" href="/atom-one-light.min.css">
+<script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+
+<!-- 引入 Leancloud 数据存储 SDK -->
+<script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+
+<!-- 引入字体库 -->
+<!--
+中国站可加速，弃用：
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+-->
+
+<link href="https://fonts.font.im/css2?family=Noto+Serif+SC&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main animated">
+        
+<!-- 
+	Copyright 2023 by PanDaoxi.
+	All right reserved.
+	
+	( Includes: header.ejs )
+-->
+
+<div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://daoxi365.github.io/">PanDaoxi</a>
+        </div>
+    </div>
+    <div class="my_socials">
+		<!--
+        
+            
+                <a href="https://github.com/pandaoxi" target="_blank"><i class="iconfont icon-github"></i></a>
+            
+        
+            
+                <a href="https://twitter.com/PanDaoxi" target="_blank"><i class="iconfont icon-twitter"></i></a>
+            
+        
+            
+        
+            
+        
+            
+        
+		-->
+		
+		<a title="微信 Wechat" href="https://daoxi365.github.io//post-images/1677405467178.jpg" target="_blank"><i class="fa fa-wechat"></i></a>
+		<a title="QQ" href="http://wpa.qq.com/msgrd?v=3&uin=2060642520&site=qq&menu=yes" target="_blank"><i class="fa fa-qq"></i></a>
+		<a title="电子邮件 E-mail" target="_blank" href="mailto:pandaoxi365@gmail.com"><i class="fa fa-envelope"></i></a>
+		<a title="技术博客 Tech Blog" href="/tech-blog/" target="_blank"><i class="fa fa-code"></i></a>
+		<a title="Github 个人主页" href="https://pandaoxi.github.io/" target="_blank"><i class="fa fa-github"></i></a>
+		<a title="订阅 RSS" href="https://daoxi365.github.io//atom.xml" target="_blank"><i class="fa fa-rss"></i></a>
+	</div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="/" class="menu">首页</a>
+            
+        
+            
+                <a href="/archives" class="menu">归档</a>
+            
+        
+            
+                <a href="/tags" class="menu">标签</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://daoxi365.github.io//search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    
+                        <div class="post animated fadeInDown">
+                            <div class="post_title">
+                                <h2>
+                                    <a href="https://daoxi365.github.io/qing-chun-feng-fan-zhu-li-zhong-guo-meng-dan-dang-fen-jin-hui-jiu-xian-dai-hua-xin-pian-zhang/">
+                                        青春风帆助力中国梦，担当奋进绘就现代化新篇章
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="list">
+                                <div class="post_content">
+                                    <p>
+                                        <p>青春风帆助力中国梦，担当奋进绘就现代化新篇章。“青春为中国式现代化挺膺担当”这一口号，蕴含着深刻的时代意义与责任感。它不仅是对当代青年的号召，更是一种激励：它要求我们在新时代的征程中承担起建设现代化中国的重任。</p>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="post_footer">
+                                <div class="meta">
+                                    <div class="info">
+                                        <div class="article-infos">
+                                            <i class="iconfont icon-words-sm"></i>
+                                            <span class="article-info">
+                                                1523
+                                            </span>
+                                            <i class="iconfont icon-calendar"></i>
+                                            <span class="article-info">
+                                                2024-07-11
+                                            </span>
+                                        </div>
+                                        
+                                            <span class="field tags"> <i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://daoxi365.github.io/notes/" class="article-info">
+                                                        笔记
+                                                    </a>
+                                                    
+                                            </span>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="post animated fadeInDown">
+                            <div class="post_title">
+                                <h2>
+                                    <a href="https://daoxi365.github.io/tuan-hui-shan-yao-zhao-liang-qing-chun-fen-dou-lu/">
+                                        团徽闪耀，照亮青春奋斗路
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="list">
+                                <div class="post_content">
+                                    <p>
+                                        <p>团徽闪耀，照亮青春奋斗路。作为中国共产主义青年团的一员，我怀着无比骄傲和自豪的心情，写下我的一些感想和对成为“新时代好青年”的深刻追求。</p>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="post_footer">
+                                <div class="meta">
+                                    <div class="info">
+                                        <div class="article-infos">
+                                            <i class="iconfont icon-words-sm"></i>
+                                            <span class="article-info">
+                                                681
+                                            </span>
+                                            <i class="iconfont icon-calendar"></i>
+                                            <span class="article-info">
+                                                2024-06-02
+                                            </span>
+                                        </div>
+                                        
+                                            <span class="field tags"> <i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://daoxi365.github.io/notes/" class="article-info">
+                                                        笔记
+                                                    </a>
+                                                    
+                                            </span>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="post animated fadeInDown">
+                            <div class="post_title">
+                                <h2>
+                                    <a href="https://daoxi365.github.io/tuan-qi-ying-feng-piao-qing-chun-yong-dan-dang/">
+                                        团旗迎风飘，青春勇担当
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="list">
+                                <div class="post_content">
+                                    <p>
+                                        <p>青年力量是社会发展的关键推动力。他们的活力和创新精神不仅推动着科技进步和社会变革，更是未来的希望与方向。在当今社会，培养青年的担当精神显得尤为重要。这种精神不仅体现在个人的责任感和行动力上，更是整个社会前进的动力源泉。</p>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="post_footer">
+                                <div class="meta">
+                                    <div class="info">
+                                        <div class="article-infos">
+                                            <i class="iconfont icon-words-sm"></i>
+                                            <span class="article-info">
+                                                418
+                                            </span>
+                                            <i class="iconfont icon-calendar"></i>
+                                            <span class="article-info">
+                                                2024-05-01
+                                            </span>
+                                        </div>
+                                        
+                                            <span class="field tags"> <i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://daoxi365.github.io/notes/" class="article-info">
+                                                        笔记
+                                                    </a>
+                                                    
+                                            </span>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="post animated fadeInDown">
+                            <div class="post_title">
+                                <h2>
+                                    <a href="https://daoxi365.github.io/chu-zhong-sheng-wu-chong-yao-zhi-shi-dian-zong-jie/">
+                                        初中生物重要知识点总结
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="list">
+                                <div class="post_content">
+                                    <p>
+                                        <p>初中生物重要知识点总结，仅供复习参考。<br>
+大部分内容来自《万唯中考试题研究》和各种各样的考试，其中一部分是我的错题。</p>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="post_footer">
+                                <div class="meta">
+                                    <div class="info">
+                                        <div class="article-infos">
+                                            <i class="iconfont icon-words-sm"></i>
+                                            <span class="article-info">
+                                                50
+                                            </span>
+                                            <i class="iconfont icon-calendar"></i>
+                                            <span class="article-info">
+                                                2024-04-13
+                                            </span>
+                                        </div>
+                                        
+                                            <span class="field tags"> <i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://daoxi365.github.io/notes/" class="article-info">
+                                                        笔记
+                                                    </a>
+                                                    
+                                            </span>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="post animated fadeInDown">
+                            <div class="post_title">
+                                <h2>
+                                    <a href="https://daoxi365.github.io/ji-jiao-ban-qi-nian-ji-sheng-wu-zhi-shi-dian-si-wei-dao-tu/">
+                                        冀少版七年级生物知识点思维导图
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="list">
+                                <div class="post_content">
+                                    <p>
+                                        <p>仅供参考，对复习可能有一定效果。推荐使用下面的电子课本：</p>
+<ul>
+<li>七年级上册：<a href="https://pandaoxi2020.lanzouj.com/iu0vw1sf9bdi">https://pandaoxi2020.lanzouj.com/iu0vw1sf9bdi</a></li>
+<li>七年级下册：<a href="https://pandaoxi2020.lanzouj.com/iKoAs1sf9bfa">https://pandaoxi2020.lanzouj.com/iKoAs1sf9bfa</a></li>
+</ul>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="post_footer">
+                                <div class="meta">
+                                    <div class="info">
+                                        <div class="article-infos">
+                                            <i class="iconfont icon-words-sm"></i>
+                                            <span class="article-info">
+                                                55
+                                            </span>
+                                            <i class="iconfont icon-calendar"></i>
+                                            <span class="article-info">
+                                                2023-07-30
+                                            </span>
+                                        </div>
+                                        
+                                            <span class="field tags"> <i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://daoxi365.github.io/notes/" class="article-info">
+                                                        笔记
+                                                    </a>
+                                                    
+                                            </span>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="post animated fadeInDown">
+                            <div class="post_title">
+                                <h2>
+                                    <a href="https://daoxi365.github.io/qing-chun-xin-xiang-dang-jian-gong-xin-shi-dai/">
+                                        青春心向党，建功新时代
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="list">
+                                <div class="post_content">
+                                    <p>
+                                        <p>少先队是作为一名少先队员，我深深感受到了青少年与党的紧密联系，也明白了自己肩负的责任和使命。在这个伟大的时代，我们作为未来的接班人，必须倍加珍惜党的培养和教育，牢记初心，勇担使命，为实现中华民族的伟大复兴贡献自己的力量。</p>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="post_footer">
+                                <div class="meta">
+                                    <div class="info">
+                                        <div class="article-infos">
+                                            <i class="iconfont icon-words-sm"></i>
+                                            <span class="article-info">
+                                                832
+                                            </span>
+                                            <i class="iconfont icon-calendar"></i>
+                                            <span class="article-info">
+                                                2022-11-16
+                                            </span>
+                                        </div>
+                                        
+                                            <span class="field tags"> <i class="iconfont icon-tag-sm"></i>
+                                                
+                                                    <a href="https://daoxi365.github.io/notes/" class="article-info">
+                                                        笔记
+                                                    </a>
+                                                    
+                                            </span>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+            
+<!-- 
+	Copyright 2024 by PanDaoxi.
+	All right reserved.
+	
+	( Includes: pagination.ejs )
+-->
+
+    </div>
+    
+<!-- 
+	Copyright 2024 by PanDaoxi.
+	All right reserved.
+	
+	( Includes: footer.ejs )
+-->
+
+<div class="footer">
+  
+  <div class="footer_slogan"><!---->
+	<p><b>温和中坚持，宁静中创新。</b></p><br>
+	<p>本站总访问次数：<b id="busuanzi_value_site_pv">0</b> 次</p>
+	<p>本站总访客数：<b id="busuanzi_value_site_uv">0</b> 人</p>
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><br>
+	<p>Copyright 2022-<span id="currentYear"></span> by <b>PanDaoxi</b>.</p><p>All rights reserved.</p>
+	</div>
+  <div id="back_to_top" class="back_to_top">
+    <span><i class="fa fa-angle-up"></i></span>
+  </div>
+  
+		<!-- 
+			<p class="statistic" id="busuanzi_container_site_pv">
+				Traffic statistics: site <span id="busuanzi_value_site_pv"></span> times, page
+				<span id="busuanzi_value_page_pv"></span> times.
+			</p>
+		-->
+  
+</div>
+
+<!-- 引入不蒜子统计 js 文件 -->
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
+<script src="https://daoxi365.github.io//media/scripts/util.js"></script>
+
+<!-- 渐变背景色特效：Powered by ColorfulBG (Github @PanDaoxi) -->
+<script src="/colorfulbg_bright.min.js"></script>
+
+<script>
+	// 鼠标点击特效
+	class Circle{constructor({origin,speed,color,angle,context}){this.origin=origin;this.position={...this.origin};this.color=color;this.speed=speed;this.angle=angle;this.context=context;this.renderCount=0}draw(){this.context.fillStyle=this.color;this.context.beginPath();this.context.arc(this.position.x,this.position.y,2,0,Math.PI*2);this.context.fill()}move(){this.position.x=Math.sin(this.angle)*this.speed+this.position.x;this.position.y=Math.cos(this.angle)*this.speed+this.position.y+this.renderCount*0.3;this.renderCount++}}class Boom{constructor({origin,context,circleCount=10,area}){this.origin=origin;this.context=context;this.circleCount=circleCount;this.area=area;this.stop=false;this.circles=[]}randomArray(range){const length=range.length;const randomIndex=Math.floor(length*Math.random());return range[randomIndex]}randomColor(){const range=["8","9","A","B","C","D","E","F"];return("#"+this.randomArray(range)+this.randomArray(range)+this.randomArray(range)+this.randomArray(range)+this.randomArray(range)+this.randomArray(range))}randomRange(start,end){return(end-start)*Math.random()+start}init(){for(let i=0;i<this.circleCount;i++){const circle=new Circle({context:this.context,origin:this.origin,color:this.randomColor(),angle:this.randomRange(Math.PI-1,Math.PI+1),speed:this.randomRange(1,6),});this.circles.push(circle)}}move(){this.circles.forEach((circle,index)=>{if(circle.position.x>this.area.width||circle.position.y>this.area.height){return this.circles.splice(index,1)}circle.move()});if(this.circles.length==0){this.stop=true}}draw(){this.circles.forEach((circle)=>circle.draw())}}class CursorSpecialEffects{constructor(){this.computerCanvas=document.createElement("canvas");this.renderCanvas=document.createElement("canvas");this.computerContext=this.computerCanvas.getContext("2d");this.renderContext=this.renderCanvas.getContext("2d");this.globalWidth=window.innerWidth;this.globalHeight=window.innerHeight;this.booms=[];this.running=false}handleMouseDown(e){const boom=new Boom({origin:{x:e.clientX,y:e.clientY},context:this.computerContext,area:{width:this.globalWidth,height:this.globalHeight},});boom.init();this.booms.push(boom);this.running||this.run()}handlePageHide(){this.booms=[];this.running=false}init(){const style=this.renderCanvas.style;style.position="fixed";style.top=style.left=0;style.zIndex="999999999999999999999999999999999999999999";style.pointerEvents="none";style.width=this.renderCanvas.width=this.computerCanvas.width=this.globalWidth;style.height=this.renderCanvas.height=this.computerCanvas.height=this.globalHeight;document.body.append(this.renderCanvas);window.addEventListener("mousedown",this.handleMouseDown.bind(this));window.addEventListener("pagehide",this.handlePageHide.bind(this))}run(){this.running=true;if(this.booms.length==0){return(this.running=false)}requestAnimationFrame(this.run.bind(this));this.computerContext.clearRect(0,0,this.globalWidth,this.globalHeight);this.renderContext.clearRect(0,0,this.globalWidth,this.globalHeight);this.booms.forEach((boom,index)=>{if(boom.stop){return this.booms.splice(index,1)}boom.move();boom.draw()});this.renderContext.drawImage(this.computerCanvas,0,0,this.globalWidth,this.globalHeight,)}}const cursorSpecialEffects=new CursorSpecialEffects();cursorSpecialEffects.init();
+	// 页面监听器
+	document.addEventListener("DOMContentLoaded", () => {
+		// .post-nav 的样式
+		var prevPost,nextPost;if((prevPost=document.querySelector(".prev-post"))!==null&&(nextPost=document.querySelector(".next-post"))!=null){var prevPostEmpty=!prevPost.textContent.trim();var nextPostEmpty=!nextPost.textContent.trim();if(!prevPostEmpty&&!nextPostEmpty){prevPost.style.marginRight="auto";nextPost.style.marginLeft="auto"}else if(!prevPostEmpty||!nextPostEmpty){if(!prevPostEmpty){prevPost.style.margin="0 auto"}else{nextPost.style.margin="0 auto"}}};
+		// 评论区修改
+		if(document.querySelector("#vcomments")!=null){document.getElementById("vcomments").removeChild(document.getElementsByClassName("vpower")[0]);document.getElementsByClassName("vempty")[0].innerHTML="评论区空空如也，等你来发言🧐";};
+		// 自动修改版权时间
+		var date=new Date();document.getElementById("currentYear").innerHTML=date.getFullYear();
+		// 图片点击放大特效
+		function hasClass(element,className){return element.classList.contains(className)}var imgs=document.getElementsByTagName("img");for(var i=imgs.length-1;i>=0;i--){if(hasClass(imgs[i],"vemoji"))imgs.pop()}for(var i=0;i<imgs.length;i++){imgs[i].classList.toggle("zoomable")}document.addEventListener("click",(event)=>{if(!event.target.closest(".zoomable")){images.forEach((img)=>{img.classList.remove("zoomed")})}});const images=document.querySelectorAll(".zoomable");images.forEach((image)=>{image.addEventListener("click",(event)=>{event.stopPropagation();image.classList.toggle("zoomed");images.forEach((otherImage)=>{if(otherImage!==image){otherImage.classList.remove("zoomed")}})})});
+	});
+	// 开发者工具
+	console.info("Hi，朋友，你在我的网站里打开了开发者工具！😉\n\n如果你也是一名开发者，欢迎你来参观我的个人 Blog！\n你是来研究我网站的原理的嘛？😎我的网站是基于 Gridea、使用 One 主题（我对它进行了亿些修改，包括但不限于添加 Valine 等各类插件，详情见 github 开源项目「gridea-theme-one-pro」）、托管于 Github 的静态网站！\n\n如果你是一名普通游客，同样欢迎你：你可能发现了新大陆！😁\n如果你想要关掉这个窗口，直接点“×”就好啦！\n\n如果你出于某种目的想盗取我站资源，对不起，我不接受未经同意的转载。抵制侵权，斗争到底。为公为私，为人为己！😠\n如果你真的需要本站资源或与想要我取得联系，请看网页右侧的图标，任选其中一个社交平台与我联系即可！\n\n最后，祝你能玩得愉快！~😊\n\nPanDaoxi\n2024年3月",);
+</script>
+</body>
+
+</html>
